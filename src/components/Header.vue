@@ -4,7 +4,7 @@
             <img src="../assets/img/Netflix-Logo.png" alt="Netflix Logo">
         </div>
         <div class="search">
-            <input type="text" placeholder="Cerca Il Tuo Film">
+            <input type="text" placeholder="Cerca Il Tuo Film" v-model="query">
             <button class="btn_search">Cerca</button>
         </div>
     </header>
@@ -13,7 +13,12 @@
 <script>
 
 export default {
-    name: 'Header'
+    name: 'Header',
+    data() {
+        return {
+            query:''
+        }
+    }
 }
 </script>
 
@@ -30,12 +35,14 @@ export default {
             align-items: center;
             height: 100%;
             margin-left: 10px;
-        }
 
-        #logo img {
+            img {
             width: 100px;
             
+            }
         }
+
+        
 
         .search {
             display: flex;
