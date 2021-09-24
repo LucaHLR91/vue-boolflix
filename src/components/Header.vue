@@ -4,9 +4,8 @@
             <img src="../assets/img/Netflix-Logo.png" alt="Netflix Logo">
         </div>
         <div class="search">
-            <form action="">
-                <input type="text">
-            </form>
+            <input type="text" placeholder="Cerca Il Tuo Film">
+            <button class="btn_search">Cerca</button>
         </div>
     </header>
 </template>
@@ -27,12 +26,37 @@ export default {
         height: 70px;
 
         #logo {
+            display: flex;
+            align-items: center;
             height: 100%;
+            margin-left: 10px;
         }
 
         #logo img {
-            width: 70px;
+            width: 100px;
             
+        }
+
+        .search {
+            display: flex;
+            align-items: center;
+            height: 100%;
+            margin-right: 10px;
+
+            input {
+                border-radius: 5px;
+                border: none;
+                margin-right: 5px;
+            }
+
+            .btn_search {
+                color: white;
+                background-color: red;
+                border: none;
+                border-radius: 5px;
+                margin-right: 10px;
+                padding: 0 5px;
+            }
         }
     }
 </style>
