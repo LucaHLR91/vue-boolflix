@@ -5,7 +5,7 @@
         </div>
         <div class="search">
             <input type="text" placeholder="Cerca Il Tuo Film" v-model="query">
-            <button class="btn_search">Cerca</button>
+            <button class="btn_search" @click="$emit('searchContent', query)" >Cerca</button>
         </div>
     </header>
 </template>
