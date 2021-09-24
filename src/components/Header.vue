@@ -19,7 +19,7 @@ export default {
 
 <style lang="scss">
 @import '../style/General';
-@import 'bootstrap';
+
 
     header {
         background-color: black;
