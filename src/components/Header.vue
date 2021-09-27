@@ -4,7 +4,7 @@
             <img src="../assets/img/Netflix-Logo.png" alt="Netflix Logo">
         </div>
         <div class="search">
-            <input type="text" placeholder="Cerca Il Tuo Film" v-model="query">
+            <input type="text" placeholder="Cerca Il Tuo Film" v-model="query"  @keyup.enter="$emit('searchContent', query)">
             <button class="btn_search" @click="$emit('searchContent', query)" >Cerca</button>
         </div>
     </header>

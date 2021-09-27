@@ -14,7 +14,7 @@ export default {
   components: {
     Content
   },
-  props: ['userSearch', 'ContentList'],
+  props: ['ContentList'],
 }
 </script>
 
