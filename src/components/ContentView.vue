@@ -28,7 +28,7 @@ export default {
     .content-wrapper {
       display: flex;
       flex-wrap: wrap;
-      justify-content: space-between;
+      justify-content: flex-start;
     }
   }
 </style>

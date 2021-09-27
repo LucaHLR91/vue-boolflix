@@ -21,20 +21,29 @@ export default {
     return {
       contentToSearch: '',
       ContentList: [],
-      APIurl: 'https://api.themoviedb.org/3/search/movie?',
+      APIurlMovies: 'https://api.themoviedb.org/3/search/movie?',
+      APIurlTvSeries: 'https://api.themoviedb.org/3/search/tv?',
       APIkey: 'api_key=ddb4c15369c26b2f75ed68bdbbe010b8&language=it-IT&query=',
-      APIquery: 'Lord of the rings',
     }
     
   },
   methods: {
     startSearch(contentToSearch) {
       this.contentToSearch = contentToSearch;
-      this.getContentList()
+      this.getMovies();
+      this.getTvSeries();
       console.log(contentToSearch)
     },
-    getContentList() {
-      axios.get(this.APIurl + this.APIkey + (!this.contentToSearch ? this.APIquery : this.contentToSearch))
+    getMovies() {
+      axios.get(this.APIurlMovies + this.APIkey + this.contentToSearch)
+      .then(res => {
+        console.log(res.data.results);
+        this.ContentList= res.data.results;
+        console.log(this.ContentList)
+      })
+    },
+    getTvSeries() {
+      axios.get(this.APIurlTvSeries + this.APIkey + this.contentToSearch)
       .then(res => {
         console.log(res.data.results);
         this.ContentList= res.data.results;
@@ -42,9 +51,6 @@ export default {
       })
     },
   },
-  mounted() {
-    this.getContentList()
-  }
 }
 </script>
 

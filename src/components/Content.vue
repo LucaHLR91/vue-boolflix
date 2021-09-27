@@ -23,7 +23,7 @@ export default {
     .content {
         display: flex;
         flex-direction: column;
-        align-items: start;
+        align-items: flex-start;
         width: calc(100% / 6);
         background-color: rgba(0, 0, 0, 0.5);
         padding: 20px;
