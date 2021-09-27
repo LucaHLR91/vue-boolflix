@@ -23,7 +23,7 @@ export default {
   main {
     height: calc(100vh - 70px);
     background-color: grey;
-    overflow: hidden;
+    overflow: scroll;
 
     .content-wrapper {
       display: flex;

@@ -20,6 +20,8 @@ export default {
   data() {
     return {
       contentToSearch: '',
+      MoviesList: [],
+      TvSeriesList: [],
       ContentList: [],
       APIurlMovies: 'https://api.themoviedb.org/3/search/movie?',
       APIurlTvSeries: 'https://api.themoviedb.org/3/search/tv?',
@@ -30,24 +32,25 @@ export default {
   methods: {
     startSearch(contentToSearch) {
       this.contentToSearch = contentToSearch;
+      this.ContentList= [];
       this.getMovies();
       this.getTvSeries();
-      console.log(contentToSearch)
+      console.log(this.ContentList)
     },
     getMovies() {
       axios.get(this.APIurlMovies + this.APIkey + this.contentToSearch)
       .then(res => {
-        console.log(res.data.results);
-        this.ContentList= res.data.results;
-        console.log(this.ContentList)
+        this.MoviesList= res.data.results;
+        this.ContentList= [...this.ContentList, ...this.MoviesList];
+        console.log(this.MoviesList)
       })
     },
     getTvSeries() {
       axios.get(this.APIurlTvSeries + this.APIkey + this.contentToSearch)
       .then(res => {
-        console.log(res.data.results);
-        this.ContentList= res.data.results;
-        console.log(this.ContentList)
+        this.TvSeriesList= res.data.results;
+        this.ContentList= [...this.ContentList, ...this.TvSeriesList];
+        console.log(this.TvSeriesList)
       })
     },
   },
