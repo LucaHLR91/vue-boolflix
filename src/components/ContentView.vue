@@ -1,6 +1,6 @@
 <template>
   <main>
-    <div>
+    <div class="content-wrapper">
       <Content v-for= "(content, index) in ContentList" :key="index" :info= content />
     </div>  
   </main>
@@ -20,5 +20,15 @@ export default {
 
 <style lang="scss">
 @import '../style/General';
+  main {
+    height: calc(100vh - 70px);
+    background-color: grey;
+    overflow: hidden;
 
+    .content-wrapper {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+  }
 </style>
